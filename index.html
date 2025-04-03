@@ -17,7 +17,12 @@
 
   <main>
     <section id="hero">
-      <img src="assets/desktop/image-hero-left.png" id="hero__img-left"/>
+      <picture>
+        <source media="(max-width:768px)" srcset="assets/tablet/image-hero.png">
+        <source media="(min-width:769px)" srcset="assets/desktop/image-hero-left.png">
+        <img src="assets/desktop/image-hero-left.png" id="hero__img-left"/>
+      </picture>
+      
       <div id="hero__content">
         <header>
         <h1>Group Chat for Everyone</h1>
@@ -32,7 +37,11 @@
           <button class="button__purple">What is it?</button>
         </section>
       </div>
-      <img src="assets/desktop/image-hero-right.png" id="hero__img-right" />
+      <picture>
+        <source media="(min-width:769px)" srcset="assets/desktop/image-hero-right.png">
+        <img src="assets/desktop/image-hero-right.png" id="hero__img-right" />
+      </picture>
+      
     </section>
     
     <section id="about">

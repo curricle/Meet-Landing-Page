@@ -180,4 +180,33 @@ footer .step {
 #footer__content p {
   color: hsl(0, 0%, 98%);
   width: 33%;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-photos {
+    gap: 24px;
+  }
+  .featured-photos img {
+    width: 152px;
+    height: 152px;
+  }
+  #hero {
+    flex-direction: column;
+    gap: 72px;
+  }
+  #hero__img-right {
+    display: none;
+  }
+  #footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #footer__content h2 {
+    width: auto;
+  }
+  #footer__content p {
+    width: auto;
+  }
 }/*# sourceMappingURL=styles.css.map */

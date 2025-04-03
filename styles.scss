@@ -226,8 +226,6 @@ footer {
 
 }
 
-
-
 #about {
     @extend %flex-column-centered;
     padding: $spacing-1000 $spacing-1400;
@@ -267,4 +265,41 @@ footer {
         color: $white;
         width: 33%;
     }
+}
+
+@media screen and (max-width: 768px) {
+
+    .featured-photos {
+        gap: $spacing-300;
+
+        img {
+            width: 152px;
+            height: 152px; 
+        }
+       
+    }
+
+    #hero {
+        flex-direction: column;
+        gap: $spacing-900;
+    }
+
+    #hero__img-right {
+        display: none;
+    }
+
+    #footer__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            width: auto;
+        }
+        p {
+            width: auto;
+        }
+    }
+
 }
