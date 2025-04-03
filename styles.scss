@@ -14,7 +14,7 @@ $slate-300: hsl(240, 18%, 85%);
 $white: hsl(0, 0%, 98%);
 
 //Typography
-$primary-font: "Red Hat Display", sans-serif;
+$primary-font: 'Red Hat Display', sans-serif;
 $weight-black: 900;
 $weight-medium: 500;
 
@@ -30,3 +30,61 @@ $spacing-300: 24px;
 $spacing-200: 16px;
 $spacing-100: 8px;
 $spacing-50: 4px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $primary-font;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    width: 100%;
+
+    img {
+        margin: 0 auto;
+    }
+}
+
+#hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.step-number {
+    align-self: center;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-photos {
+    display: flex;
+    gap: $spacing-400;
+
+    img {
+        height: 256px;
+        width: 256px;
+        border-radius: $spacing-100;
+    }
+}
+
+footer {
+    display: flex;
+    text-align: left;
+}
