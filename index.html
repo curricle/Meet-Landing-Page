@@ -18,7 +18,7 @@
   <main>
     <section id="hero">
       <img src="assets/desktop/image-hero-left.png" id="hero__img-left"/>
-      <div class="hero__content">
+      <div id="hero__content">
         <header>
         <h1>Group Chat for Everyone</h1>
         </header>
@@ -36,7 +36,12 @@
     </section>
     
     <section id="about">
-      <div class="step-number">01</div>
+      <div class="step">
+        <div class="step__line"></div>
+        <div class="step__number">
+          01
+        </div>
+      </div>
 
       <div class="featured-photos">
         <img src="assets/desktop/image-woman-in-videocall.jpg" />
@@ -45,25 +50,34 @@
         <img src="assets/desktop/image-man-texting.jpg" />
       </div>
 
-      <heading>
-        <span class="subhead">Built for modern use</span>
-        <h2>Smarter meetings, all in one place</h2>
-      </heading>
-      
-      <p>
-        Send messages, share files, show your screen, and record your meetings — all in one 
-      workspace. Control who can join with invite-only team access, data encryption, and data export.
-    </p>
+      <div id="about__content">
+        <header>
+          <span class="subhead">Built for modern use</span>
+          <h2>Smarter meetings, all in one place</h2>
+        </header>
+        
+        <p>
+          Send messages, share files, show your screen, and record your meetings — all in one 
+        workspace. Control who can join with invite-only team access, data encryption, and data export.
+        </p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="step-number">02</div>
+    <div class="step">
+      <div class="step__line"></div>
+      <div class="step__number">
+        02
+      </div>
+    </div>
 
-    <h2>Experience more together</h2>
-    <p>Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.</p>
+    <div id="footer__content">
+      <h2>Experience more together</h2>
+      <p>Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.</p>
 
-    <button class="button__purple">Download <span class="version">v1.3</span></button>
+      <button class="button__purple">Download <span class="version">v1.3</span></button>
+    </div>
   </footer>
  
 </body>

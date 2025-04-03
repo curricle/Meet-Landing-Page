@@ -13,11 +13,6 @@ $slate-300: hsl(240, 18%, 85%);
 
 $white: hsl(0, 0%, 98%);
 
-//Typography
-$primary-font: 'Red Hat Display', sans-serif;
-$weight-black: 900;
-$weight-medium: 500;
-
 // Spacing
 $spacing-1400: 112px;
 $spacing-1000: 80px;
@@ -30,6 +25,53 @@ $spacing-300: 24px;
 $spacing-200: 16px;
 $spacing-100: 8px;
 $spacing-50: 4px;
+
+//Typography
+$primary-font: 'Red Hat Display', sans-serif;
+$weight-black: 900;
+$weight-medium: 500;
+
+%text-preset-1 {
+    font-family: $primary-font;
+    font-size: $spacing-800;
+    font-weight: $weight-black;
+    line-height: 110%;
+    letter-spacing: 0px;
+    color: $slate-900;
+}
+
+%text-preset-2 {
+    @extend %text-preset-1;
+    font-size: $spacing-500;
+}
+
+%text-preset-3 {
+    @extend %text-preset-1;
+    font-size: $spacing-200;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $cyan-600;
+}
+
+%text-preset-4 {
+    @extend %text-preset-1;
+    font-size: 18px;
+    font-weight: $weight-medium;
+    color: $slate-600;
+}
+
+%text-preset-5 {
+    @extend %text-preset-1;
+    font-size: $spacing-200;
+    line-height: 150%;
+}
+
+%flex-column-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 * {
     margin: 0;
@@ -44,33 +86,51 @@ body {
     flex-direction: column;
     min-height: 100vh;
     width: 100vw;
-    justify-content: space-between;
 }
 
-#logo {
-    display: flex;
-    width: 100%;
+h2 {
+    @extend %text-preset-2;
+}
 
-    img {
-        margin: 0 auto;
+p {
+    @extend %text-preset-4;
+}
+
+button {
+    padding: $spacing-200 $spacing-500;
+    border-radius: 29px;
+    border: none;
+    @extend %text-preset-5;
+}
+
+footer {
+    @extend %flex-column-centered;
+}
+
+.subhead {
+    @extend %text-preset-3;
+}
+
+.step {
+    @extend %flex-column-centered;
+
+    .step__number {
+        @extend %flex-column-centered;
+
+        border: 1px solid $slate-300;
+        border-radius: 999px;
+        height: $spacing-700;
+        width: $spacing-700;
+        
+        @extend %text-preset-5;
+        text-align: center;
+        color: $slate-600;
     }
-}
-
-#hero {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.step-number {
-    align-self: center;
-}
-
-#about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .step__line {
+        height: $spacing-1000;
+        width: 1px;
+        background-color: $slate-300;
+    }
 }
 
 .featured-photos {
@@ -84,7 +144,49 @@ body {
     }
 }
 
-footer {
+#logo {
+    display: flex;
+    width: 100%;
+
+    img {
+        margin: 83px auto 0px auto;
+    }
+}
+
+#hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        @extend %text-preset-1;
+    }
+}
+
+#hero__content {
+    @extend %flex-column-centered;
+    gap: $spacing-400;
+}
+
+#about {
+    @extend %flex-column-centered;
+    padding: $spacing-1000 $spacing-1400;
+    gap: $spacing-800;
+}
+
+#about__content {
+    @extend %flex-column-centered;
+    gap: $spacing-400;
+
+    header {
+        gap: $spacing-200;
+    } 
+}
+
+#footer__content {
     display: flex;
     text-align: left;
+    gap: $spacing-400;
+    padding: $spacing-1000 $spacing-1400;
 }
