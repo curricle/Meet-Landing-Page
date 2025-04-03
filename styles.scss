@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:math";
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 // Colors
@@ -58,6 +60,7 @@ $weight-medium: 500;
     font-size: 18px;
     font-weight: $weight-medium;
     color: $slate-600;
+    line-height: 150%;
 }
 
 %text-preset-5 {
@@ -86,6 +89,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     width: 100vw;
+    background-color: $white;
 }
 
 h2 {
@@ -100,11 +104,47 @@ button {
     padding: $spacing-200 $spacing-500;
     border-radius: 29px;
     border: none;
+
     @extend %text-preset-5;
+    color: $white;
+    transition: all .2s;
 }
 
 footer {
     @extend %flex-column-centered;
+    background: linear-gradient(color.change($cyan-600, $alpha: 0.8), color.change($cyan-600, $alpha: 0.8)), url("assets/desktop/image-footer.jpg") center top;
+    background-size: cover;
+    padding-left: $spacing-1000;
+    padding-right: $spacing-1000;
+    margin-top: ($spacing-1000 + calc($spacing-700/2));
+
+    .step {
+        margin-top: -($spacing-1000 + calc($spacing-700/2));
+    }
+}
+
+.button__purple {
+    background-color: $purple-600;
+
+    &:hover {
+        background-color: color.change($purple-600, $saturation: 55%, $lightness: 71%);
+    }
+
+    .version {
+        color: $purple-300;
+    }
+}
+
+.button__cyan {
+    background-color: $cyan-600;
+
+    &:hover {
+        background-color: color.change($cyan-600, $saturation: 54%, $lightness: 64%);
+    }
+
+    .version {
+        color: $cyan-300;
+    }
 }
 
 .subhead {
@@ -121,6 +161,7 @@ footer {
         border-radius: 999px;
         height: $spacing-700;
         width: $spacing-700;
+        background-color: $white;
         
         @extend %text-preset-5;
         text-align: center;
@@ -158,35 +199,72 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: $spacing-800;
 
     h1 {
         @extend %text-preset-1;
     }
+
+    #buttons {
+        display: flex;
+        gap: $spacing-200;
+    }
+
+    #hero__img-left {
+        margin-left: -$spacing-300;
+    }
+
+    #hero__content {
+        @extend %flex-column-centered;
+        gap: $spacing-400;
+        max-width: 450px;
+    }
+
+    #hero__img-right {
+        margin-right: -$spacing-300;
+    }
+
 }
 
-#hero__content {
-    @extend %flex-column-centered;
-    gap: $spacing-400;
-}
+
 
 #about {
     @extend %flex-column-centered;
     padding: $spacing-1000 $spacing-1400;
     gap: $spacing-800;
+
+    .step {
+        margin-top: $spacing-700;
+    }
 }
 
 #about__content {
     @extend %flex-column-centered;
     gap: $spacing-400;
+    max-width: 545px;
 
     header {
+        @extend %flex-column-centered;
         gap: $spacing-200;
+        max-width: 445px;
     } 
 }
 
 #footer__content {
     display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
     text-align: left;
     gap: $spacing-400;
     padding: $spacing-1000 $spacing-1400;
+    
+    h2 {
+        color: $white;
+        width: 33%;
+    }
+
+    p {
+        color: $white;
+        width: 33%;
+    }
 }

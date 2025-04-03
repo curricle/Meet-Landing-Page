@@ -23,6 +23,7 @@ p {
   font-size: 18px;
   font-weight: 500;
   color: hsl(240, 10%, 57%);
+  line-height: 150%;
 }
 
 .step .step__number, button {
@@ -30,7 +31,7 @@ p {
   line-height: 150%;
 }
 
-#about__content, #about, #hero__content, .step .step__number, .step, footer {
+#about__content header, #about__content, #about, #hero #hero__content, .step .step__number, .step, footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,12 +51,46 @@ body {
   flex-direction: column;
   min-height: 100vh;
   width: 100vw;
+  background-color: hsl(0, 0%, 98%);
 }
 
 button {
   padding: 16px 40px;
   border-radius: 29px;
   border: none;
+  color: hsl(0, 0%, 98%);
+  transition: all 0.2s;
+}
+
+footer {
+  background: linear-gradient(rgba(77, 150, 168, 0.8), rgba(77, 150, 168, 0.8)), url("assets/desktop/image-footer.jpg") center top;
+  background-size: cover;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-top: 108px;
+}
+footer .step {
+  margin-top: -108px;
+}
+
+.button__purple {
+  background-color: hsl(268, 34%, 53%);
+}
+.button__purple:hover {
+  background-color: #b28cde;
+}
+.button__purple .version {
+  color: hsl(268, 100%, 86%);
+}
+
+.button__cyan {
+  background-color: hsl(192, 37%, 48%);
+}
+.button__cyan:hover {
+  background-color: #72c1d5;
+}
+.button__cyan .version {
+  color: hsl(192, 90%, 77%);
 }
 
 .step .step__number {
@@ -63,6 +98,7 @@ button {
   border-radius: 999px;
   height: 56px;
   width: 56px;
+  background-color: hsl(0, 0%, 98%);
   text-align: center;
   color: hsl(240, 10%, 57%);
 }
@@ -95,26 +131,53 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 64px;
 }
-#hero__content {
+#hero #buttons {
+  display: flex;
+  gap: 16px;
+}
+#hero #hero__img-left {
+  margin-left: -24px;
+}
+#hero #hero__content {
   gap: 32px;
+  max-width: 450px;
+}
+#hero #hero__img-right {
+  margin-right: -24px;
 }
 
 #about {
   padding: 80px 112px;
   gap: 64px;
 }
+#about .step {
+  margin-top: 56px;
+}
 
 #about__content {
   gap: 32px;
+  max-width: 545px;
 }
 #about__content header {
   gap: 16px;
+  max-width: 445px;
 }
 
 #footer__content {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
   text-align: left;
   gap: 32px;
   padding: 80px 112px;
+}
+#footer__content h2 {
+  color: hsl(0, 0%, 98%);
+  width: 33%;
+}
+#footer__content p {
+  color: hsl(0, 0%, 98%);
+  width: 33%;
 }/*# sourceMappingURL=styles.css.map */
