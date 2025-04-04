@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution on Frontend Mentor](https://your-solution-url.com)
+- Solution URL: [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/meet-landing-page-using-scss-L7Pe0dgBSR)
 - Live Site URL: [GitHub Pages](https://curricle.github.io/Meet-Landing-Page/)
 
 ## My process
