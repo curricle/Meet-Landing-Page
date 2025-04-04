@@ -33,36 +33,41 @@ $primary-font: 'Red Hat Display', sans-serif;
 $weight-black: 900;
 $weight-medium: 500;
 
+// Red Hat Display Black - Large (h1)
 %text-preset-1 {
     font-family: $primary-font;
-    font-size: $spacing-800;
+    font-size: clamp($spacing-500, 7vw, $spacing-800);
     font-weight: $weight-black;
     line-height: 110%;
     letter-spacing: 0px;
     color: $slate-900;
 }
 
+// Red Hat Display BLack - Medium (h2)
 %text-preset-2 {
     @extend %text-preset-1;
-    font-size: $spacing-500;
+    font-size: clamp($spacing-400, 6vw, $spacing-500);
 }
 
+// Red Hat Display Black - Subhead
 %text-preset-3 {
     @extend %text-preset-1;
-    font-size: $spacing-200;
+    font-size: clamp(13px, 4vw, $spacing-200);
     letter-spacing: 4px;
     text-transform: uppercase;
     color: $cyan-600;
 }
 
+// Red Hat Display Medium - Medium (Body)
 %text-preset-4 {
     @extend %text-preset-1;
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     font-weight: $weight-medium;
     color: $slate-600;
     line-height: 150%;
 }
 
+// Red Hat Display Black - Small (Buttons)
 %text-preset-5 {
     @extend %text-preset-1;
     font-size: $spacing-200;
@@ -174,17 +179,6 @@ footer {
     }
 }
 
-.featured-photos {
-    display: flex;
-    gap: $spacing-400;
-
-    img {
-        height: 256px;
-        width: 256px;
-        border-radius: $spacing-100;
-    }
-}
-
 #logo {
     display: flex;
     width: 100%;
@@ -218,6 +212,7 @@ footer {
         @extend %flex-column-centered;
         gap: $spacing-400;
         max-width: 450px;
+        margin: 0 $spacing-800;
     }
 
     #hero__img-right {
@@ -233,6 +228,20 @@ footer {
 
     .step {
         margin-top: $spacing-700;
+    }
+}
+
+#featured-photos {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-400;
+    width: 100%;
+
+    img {
+        max-height: 256px;
+        max-width: 256px;
+        width: 100%;
+        border-radius: $spacing-100;
     }
 }
 
@@ -267,7 +276,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
 
     footer {
         padding: 0;
@@ -275,10 +284,13 @@ footer {
 
     .featured-photos {
         gap: $spacing-300;
+        justify-content: center;
 
         img {
-            width: 152px;
-            height: 152px; 
+            max-width: 152px;
+            max-height: 152px; 
+            width: 100%;
+            height: 100%;
         }
        
     }
@@ -292,8 +304,18 @@ footer {
 
     #hero {
         flex-direction: column;
+        justify-content: center; 
         gap: 0;
-    }
+
+        #hero__content {
+            margin: 0;
+        }
+
+        #hero__img-left {
+            margin-left: -5%;
+            width: 110%;
+        }
+    } 
 
     #hero__img-right {
         display: none;
@@ -304,7 +326,7 @@ footer {
     }
 
     #about {
-        padding-top: 0;
+        padding: 0 $spacing-400 $spacing-1000 $spacing-400;
     }
 
     #footer__content {
@@ -323,4 +345,54 @@ footer {
         }
     }
 
+}
+
+@media screen and (max-width: 495px) {
+
+    #featured-photos {
+        flex-wrap: wrap;
+        gap: $spacing-200;
+
+        img {
+            width: 144px;
+            height: 144px;
+        }
+    }
+
+    #hero, #about, #footer__content {
+        padding-left: $spacing-400;
+        padding-right: $spacing-400;
+    }
+
+    #hero {
+
+        picture {
+            display: flex;
+            justify-content: center;
+            width: 125%;
+
+            #hero__img-left {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        #hero__content {
+            padding: $spacing-400 0;
+        }
+    }
+
+    #buttons {
+        flex-direction: column;
+    }
+
+    #about {
+        .step {
+            margin-top: $spacing-400;
+        }
+    }
+
+    #footer__content {
+        padding: $spacing-800 $spacing-400 ;
+    }
 }
