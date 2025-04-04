@@ -183,6 +183,9 @@ footer .step {
 }
 
 @media screen and (max-width: 768px) {
+  footer {
+    padding: 0;
+  }
   .featured-photos {
     gap: 24px;
   }
@@ -190,18 +193,29 @@ footer .step {
     width: 152px;
     height: 152px;
   }
+  #logo img {
+    margin: 51px auto 2px auto;
+  }
   #hero {
     flex-direction: column;
-    gap: 72px;
+    gap: 0;
   }
   #hero__img-right {
     display: none;
+  }
+  #hero__content {
+    padding: 72px 0 64px 0;
+  }
+  #about {
+    padding-top: 0;
   }
   #footer__content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 64px 112px;
+    margin-top: -28px;
   }
   #footer__content h2 {
     width: auto;
